@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amox-Clav Dosage Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Amox-Clav Dosage Calculator</h1>
+  </header>
+  <main>
+    <form id="calculatorForm">
+      <label for="weight">Patient Weight (kg):</label>
+      <input type="number" id="weight" placeholder="Enter weight" required><br><br>
+
+      <label for="severity">Infection Severity:</label>
+      <select id="severity">
+        <option value="mild">Mild</option>
+        <option value="moderate">Moderate</option>
+        <option value="severe">Severe</option>
+      </select><br><br>
+
+      <label for="frequency">Dosing Frequency:</label>
+      <select id="frequency">
+        <option value="8">Every 8 hours</option>
+        <option value="12">Every 12 hours</option>
+      </select><br><br>
+
+      <button type="button" onclick="calculateDose()">Calculate</button>
+    </form>
+    <h2 id="result"></h2>
+  </main>
+  <footer>
+    <p>Disclaimer: This calculator is for informational purposes only. Consult a healthcare provider for medical advice.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

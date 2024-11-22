@@ -1,0 +1,26 @@
+function calculateDose() {
+  // Get input values
+  const weight = parseFloat(document.getElementById("weight").value);
+  const severity = document.getElementById("severity").value;
+  const frequency = parseInt(document.getElementById("frequency").value);
+
+  // Validate input
+  if (isNaN(weight) || weight <= 0) {
+    document.getElementById("result").innerText = "Please enter a valid weight.";
+    return;
+  }
+
+  // Determine dose per kg based on severity
+  let dosePerKg;
+  if (severity === "mild") dosePerKg = 20;
+  else if (severity === "moderate") dosePerKg = 30;
+  else if (severity === "severe") dosePerKg = 40;
+
+  // Calculate total daily dose and dose per interval
+  const totalDailyDose = weight * dosePerKg;
+  const dosePerInterval = totalDailyDose / (24 / frequency);
+
+  // Display result
+  document.getElementById("result").innerText = 
+    `Recommended dose: ${dosePerInterval.toFixed(2)} mg every ${frequency} hours.`;
+}
